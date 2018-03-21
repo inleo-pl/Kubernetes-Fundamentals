@@ -5,30 +5,22 @@ Repozytorium plików do jedniodniowego warsztatu Kubernetes Fundamentals.
 
 ## Dla kogo?
 
-Szkolenie skierowane jest do programistów jak i administratorów chcących poznać zasady współpracy narzędzi CI/CD (Jenkins) z ekosystemem Docker oraz poznać praktyczną implementację metodologii Infrastructure As a Code.
+Szkolenie skierowane jest do programistów jak i administratorów rozpoczynajacych przygodę z Kubernetesem, którzy chcących poznać fundamenty działania, proces instalacji i administracji jednej z najpopularniejszych obecnie platform orkiestracji kontnerów.
 
 ## Co oferujemy?
 
-Szkolenie porusza zagadnienia związane z integracją platform git (Gitab) i CI/CD (Jenkins) z platformą Docker. Szkolenie porusza tematy związane z automatyzacją uruchamiania mikroserwisów i automatyczną budową usług na podstawie danych zawartych w repozytorium kodu (git). Poruszone zostają też tematy integracji Jenkinsa z platformą Docker Swarm.
+Szkolenie porusza zagadnienia związane z architekturą, instalacją i konfiguracją klastra Kubernetes. Warsztat ten nauczy cię jak kożystać z oprogramowania do orkiestracji jakim jest Kubernetes aby poczuć się swobodnie podczas wdrażania go w środowisku Twojej organizacji.
 
 Wymagana jest wiedza związana z platformą Docker oraz systemami Linux/Unix. Uczestnik musi posiadać również elementarną wiedzę na temat systemów kontroli wersji opartych o git oraz zagadnień dotyczących sieci TCP/IP.
 
 ## Agenda
 
-1. Co to jest Continous Deployment i Continuous Integration, po co wymyślono CI/CD
-    * [01 - Połączenie](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/01-Polaczenie.md)
-    * [02 - Przygotowanie klastra](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/02-Przygotowanie-klastra.md)
-2. Jenkins
-    * [03 - Instalacja Jenkinsa](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/03-Instalacja-Jenkinsa.md)
-3. GitLab
-    * [04 - Instalacja i konfiguracja GitLab](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/04-Instalacja-i-konfiguracja-GitLab.md)
-4. Integracja GitLab i Jenkins
-    * [05 - Integracja GitLab i Jenkins](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/05-Integracja-GitLab-i-Jenkins.md)
-5. Intrgracja Jenkins z Docker Hub
-    * [06 - Integracja Jenkins z Docker Hub](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/06-Integracja-Jenkins-z-Docker-Hub.md)
-6. Intrgracja Jenkins z Docker Swarm
-    * [07 - Integracja Jenkins z Docker Swarm](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/07-Integracja-Jenkins-z-Docker-Swarm.md)
-    * [08 - Jenkins i start stack](https://github.com/inleo-pl/Warsztaty-Docker-CI-CD/blob/master/08-Jenkins-i-start-stack.md)
+1. Czym jest Kubernetes
+2. Architektura Kubernetesa
+3. Instalacja 
+4. Pody
+5. Serwisy
+6. Deployment na klastrze Kubernetesa
 
 ## Kiedy, co i jak?
 

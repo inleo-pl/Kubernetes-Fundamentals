@@ -9,7 +9,7 @@ Szkolenie skierowane jest do programistów jak i administratorów rozpoczynajacy
 
 ## Co oferujemy?
 
-Szkolenie porusza zagadnienia związane z architekturą, instalacją i konfiguracją klastra Kubernetes. Warsztat ten nauczy cię jak kożystać z oprogramowania do orkiestracji jakim jest Kubernetes aby poczuć się swobodnie podczas wdrażania go w środowisku Twojej organizacji.
+Szkolenie porusza zagadnienia związane z architekturą, instalacją i konfiguracją klastra Kubernetes. Warsztat ten nauczy cię jak korzystać z oprogramowania do orkiestracji jakim jest Kubernetes aby poczuć się swobodnie podczas wdrażania go w środowisku Twojej organizacji.
 
 Wymagana jest wiedza związana z platformą Docker oraz systemami Linux/Unix. Uczestnik musi posiadać również elementarną wiedzę na temat systemów kontroli wersji opartych o git oraz zagadnień dotyczących sieci TCP/IP.
 

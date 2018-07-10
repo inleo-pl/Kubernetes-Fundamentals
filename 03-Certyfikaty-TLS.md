@@ -41,3 +41,31 @@ Wprowadzamy:
   ]
 }
 ```
+Generujemy certy:
+```
+cfssl gencert -initca ca-csr.json | cfssljson -bare ca
+ls -la
+```
+Czas na certy dla K8S, na start dla klienta (admina):
+```
+sudo vi admin-csr.json
+```
+Wstawiamy:
+```
+{
+  "CN": "admin",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "IE",
+      "L": "Cork",
+      "O": "system:masters",
+      "OU": "Kubernetes",
+      "ST": "Cork Co."
+    }
+  ]
+}
+```

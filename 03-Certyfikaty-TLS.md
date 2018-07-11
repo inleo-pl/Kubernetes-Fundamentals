@@ -1,3 +1,5 @@
+# Certyfikaty TLS
+
 W tym labie stworzymy infrastrukturę PKI używając CloudFlare's PKI toolkit, cfssl, następnie machniemy Certificate Authority i wygenerujemy certyfikaty TLS dla następujących komponentów: etcd, kube-apiserver, kube-controller-manager, kube-scheduler, kubelet i kube-proxy.
 
 Stwórz katalog zawierający certyfikaty na potrzeby klastra Kubernetes:

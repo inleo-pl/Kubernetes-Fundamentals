@@ -26,7 +26,7 @@ kubectl version
 Czas zainstalować HAProxy:
 ```
 sudo apt-get install haproxy
-sudo vim /etc/haproxy/haproxy.cfg
+sudo vi /etc/haproxy/haproxy.cfg
 ```
 W konfigurację HAProxy wpisujemy następujące parametry:
 ```

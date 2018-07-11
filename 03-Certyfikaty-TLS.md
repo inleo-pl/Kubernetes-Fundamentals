@@ -330,6 +330,6 @@ cfssl gencert \
 Następnie skopjuj certyfikaty do odpowiednich nodów:
 ```
 scp -i ../Kubernetes_Fundamentals.pem ca.pem worker01-key.pem worker01.pem ubuntu@${WORKER01_IP}:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem ubuntu@{WORKER02_IP}:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem ubuntu@{MASTER01_IP}:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem ubuntu@${WORKER02_IP}:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem ubuntu@${MASTER01_IP}:~
 ```

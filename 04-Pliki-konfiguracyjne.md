@@ -1,3 +1,5 @@
+# Pliki konfiguracyjne
+
 ## Pliki konfiguracyjne kubelet
 
 Musimy skonfigurować kubelet na każdym węźle klastra typu worker, na początku generujemy kubeconfig dla kubelets. Na poczatku worker01:

@@ -10,4 +10,7 @@ ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@manager01
 ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@worker01
 ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@worker02
 ```
-Sprawdz IP każdego z powyższych serwerów i zapisz je sobie.
+Sprawdz IP każdego z powyższych serwerów i zapisz je sobie. Dodatkowo sciągnij sobie na HAProxy certyfikat .pem:
+```
+wget https://raw.githubusercontent.com/inleo-pl/Warsztaty-Kubernetes-Fundamentlas/master/Kubernetes_Fundamentals.pem
+```

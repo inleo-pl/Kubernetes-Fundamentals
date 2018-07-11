@@ -188,7 +188,7 @@ cfssljson -bare kubernetes
 ```
 Następnie skopjuj certyfikaty do odpowiednich nodów:
 ```
-scp ca.pem [worker01-IP]-key.pem [worker01-IP].pem [worker01-IP]:~
-scp ca.pem [worker02-IP]-key.pem [worker02-IP].pem [worker02-IP]:~
-scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem [master01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem [worker01-IP]-key.pem [worker01-IP].pem ubuntu@[worker01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem [worker02-IP]-key.pem [worker02-IP].pem [worker02-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem [master01-IP]:~
 ```

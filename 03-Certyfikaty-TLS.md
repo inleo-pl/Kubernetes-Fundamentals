@@ -1,12 +1,24 @@
+W tym labie stworzymy infrastrukturę PKI używając CloudFlare's PKI toolkit, cfssl, następnie machniemy Certificate Authority i wygenerujemy certyfikaty TLS dla następujących komponentów: etcd, kube-apiserver, kube-controller-manager, kube-scheduler, kubelet i kube-proxy.
+
 Stwórz katalog zawierający certyfikaty na potrzeby klastra Kubernetes:
 ```
 mkdir conf/
 cd conf
 ```
-Plik konfiguracyjny CA:
+Zdefiniuj zmienne:
 ```
-sudo vi ca-config.json
+WORKER01_IP='[worker01-IP]'
+WORKER02_IP='[worker02-IP]'
+MASTER01_IP='[master01-IP]'
+EXTERNAL_IP='[HAProxy-IP]
+```
+## Certificate Authority
 
+Wygeneruj plik konfiguracyjny CA, certyfiakty, i prywatny klucz:
+```
+{
+
+cat > ca-config.json <<EOF
 {
   "signing": {
     "default": {
@@ -20,11 +32,9 @@ sudo vi ca-config.json
     }
   }
 }
-```
-Następnie CA signing request:
-```
-sudo vi ca-csr.json
+EOF
 
+cat > ca-csr.json <<EOF
 {
   "CN": "Kubernetes",
   "key": {
@@ -33,21 +43,31 @@ sudo vi ca-csr.json
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "Kubernetes",
       "OU": "CA",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca
-```
-Czas na certy dla K8S, na start certyfikat dla klienta (admina):
-```
-sudo vi admin-csr.json
 
+}
+```
+## Certyfikaty Client i Server
+
+Wygenerujemy certyfikaty klienta i serwera  każdego komponentu Kubernetesa dla użytkownika admin.
+
+### Certyfikat dla admina
+
+Wygeneruj certyfiakt klancki dla administratora i klucz prywatny:
+```
+{
+
+cat > admin-csr.json <<EOF
 {
   "CN": "admin",
   "key": {
@@ -56,84 +76,126 @@ sudo vi admin-csr.json
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "system:masters",
       "OU": "Kubernetes",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert \
--ca=ca.pem \
--ca-key=ca-key.pem \
--config=ca-config.json \
--profile=kubernetes admin-csr.json | \
-cfssljson -bare admin
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  admin-csr.json | cfssljson -bare admin
+
+}
 ```
+### Certyfikaty Kubelet Client
+
 Kolejnym certem jest certyfikat klienta kubelet dla każdego workera, na początku worker01:
 ```
-sudo vi [IP-worker-1]-csr.json
-
+cat > worker01-csr.json <<EOF
 {
-  "CN": "system:node:[IP-worker-1]",
+  "CN": "system:node:${instance}",
   "key": {
     "algo": "rsa",
     "size": 2048
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "system:nodes",
       "OU": "Kubernetes",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert \
--ca=ca.pem \
--ca-key=ca-key.pem \
--config=ca-config.json \
--hostname=[IP-worker-1],[IP-worker-1] \
--profile=kubernetes [IP-worker-1]-csr.json | \
-cfssljson -bare [IP-worker-1]
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=worker01,${WORKER01_IP},${WORKER01_IP} \
+  -profile=kubernetes \
+  worker01-csr.json | cfssljson -bare worker01-csr.json
 ```
 Następnie worker02:
 ```
-sudo vi [IP-worker-2]-csr.json
-
+cat > worker02-csr.json <<EOF
 {
-  "CN": "system:node:[IP-worker-2]",
+  "CN": "system:node:${instance}",
   "key": {
     "algo": "rsa",
     "size": 2048
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "system:nodes",
       "OU": "Kubernetes",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert \
--ca=ca.pem \
--ca-key=ca-key.pem \
--config=ca-config.json \
--hostname=[IP-worker-2],[IP-worker-2] \
--profile=kubernetes [IP-worker-2]-csr.json | \
-cfssljson -bare [IP-worker-2]
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=worker01,${WORKER02_IP},${WORKER02_IP} \
+  -profile=kubernetes \
+  worker02-csr.json | cfssljson -bare worker02-csr.json
 ```
+### Certyfikat Controller Managera
+
+Wygenerowanie certyfikatu klienckiego dla kube-controller-manager i klucza prywatego:
+```
+{
+
+cat > kube-controller-manager-csr.json <<EOF
+{
+  "CN": "system:kube-controller-manager",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:kube-controller-manager",
+      "OU": "Kubernetes",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
+
+}
+```
+### Certyfiakt Kube Proxy
+
 Kolejnym elementem instalowanmy na węzłach typu worker będzie kube-proxy, ono też potrzebuje certa:
 ```
-sudo vi kube-proxy-csr.json
+{
 
+cat > kube-proxy-csr.json <<EOF
 {
   "CN": "system:kube-proxy",
   "key": {
@@ -142,25 +204,64 @@ sudo vi kube-proxy-csr.json
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "system:node-proxier",
       "OU": "Kubernetes",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert \
--ca=ca.pem -ca-key=ca-key.pem \
--config=ca-config.json \
--profile=kubernetes kube-proxy-csr.json | \
-cfssljson -bare kube-proxy
-```
-Ostatniem modułem potrzebującem certa jest API znajdujące się na węzłach typu master:
-```
-sudo vi kubernetes-csr.json
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-proxy-csr.json | cfssljson -bare kube-proxy
 
+}
+```
+### Certyfikat Scheduler
+
+Generowanie certyfikatów kube-scheduler i klucza prywatnego:
+```
+{
+
+cat > kube-scheduler-csr.json <<EOF
+{
+  "CN": "system:kube-scheduler",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:kube-scheduler",
+      "OU": "Kubernetes",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-scheduler-csr.json | cfssljson -bare kube-scheduler
+
+}
+```
+### Certyfikat Kubernetes API Server 
+
+Generowanie certyfikatu dla Kubernetes API Server znajdującego się na węzłach typu master:
+```
+cat > kubernetes-csr.json <<EOF
 {
   "CN": "kubernetes",
   "key": {
@@ -169,26 +270,65 @@ sudo vi kubernetes-csr.json
   },
   "names": [
     {
-      "C": "IE",
-      "L": "Cork",
+      "C": "US",
+      "L": "Portland",
       "O": "Kubernetes",
       "OU": "Kubernetes",
-      "ST": "Cork Co."
+      "ST": "Oregon"
     }
   ]
 }
+EOF
 
 cfssl gencert \
--ca=ca.pem \
--ca-key=ca-key.pem \
--config=ca-config.json \
--hostname=[master01-IP],kubernetes.default,master01 \
--profile=kubernetes kubernetes-csr.json | \
-cfssljson -bare kubernetes
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=10.32.0.1,10.240.0.10,10.240.0.11,10.240.0.12,${EXTERNAL_IP},${MASTER01_IP},127.0.0.1,haproxy,master01,kubernetes.localdomain,kubernetes.default \
+  -profile=kubernetes \
+  kubernetes-csr.json | cfssljson -bare kubernetes
+
+}
 ```
+## Service Account Key Pair
+
+Wygeneruj certyfikaty dla service-account i klucz prywatny:
+```
+{
+
+cat > service-account-csr.json <<EOF
+{
+  "CN": "service-accounts",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "Kubernetes",
+      "OU": "Kubernetes",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  service-account-csr.json | cfssljson -bare service-account
+
+}
+```
+## Prześlij plik na serwery
+
 Następnie skopjuj certyfikaty do odpowiednich nodów:
 ```
-scp -i ../Kubernetes_Fundamentals.pem ca.pem [worker01-IP]-key.pem [worker01-IP].pem ubuntu@[worker01-IP]:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem [worker02-IP]-key.pem [worker02-IP].pem [worker02-IP]:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem [master01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem worker01-key.pem worker01.pem ubuntu@[worker01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem [worker02-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem [master01-IP]:~
 ```

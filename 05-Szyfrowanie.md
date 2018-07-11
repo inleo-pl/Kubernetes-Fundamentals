@@ -1,3 +1,5 @@
+# Szyfrowanie
+
 Kubernetes przechowuje różne dane - stan klastra, konfigurację aplikacji i sekrety. Zaszyfrujmy to!
 
 ## Encryption Key

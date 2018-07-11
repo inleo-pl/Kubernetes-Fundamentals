@@ -31,9 +31,9 @@ sudo vi /etc/haproxy/haproxy.cfg
 W konfigurację HAProxy wpisujemy następujące parametry:
 ```
 global
-...
+
 default
-...
+
 frontend kubernetes
     bind        [HAProxy-IP]:6443
     option      tcplog

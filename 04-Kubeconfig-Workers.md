@@ -48,7 +48,7 @@ kubectl config set-context default \
 
 kubectl config use-context default --kubeconfig=[worker02-IP].kubeconfig
 ```
-Tworzymy następnie konfig dla kube-proxies:
+Tworzymy następnie konfig dla kube-proxy:
 ```
 kubectl config set-cluster kubernetes \
 --certificate-authority=ca.pem \
@@ -71,6 +71,6 @@ kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
 ```
 Kopjujemy wszytsko na odpowiednie hosty:
 ```
-scp [worker01-IP].kubeconfig kube-proxy.kubeconfig [worker01-IP]:~
-scp [worker02-IP].kubeconfig kube-proxy.kubeconfig [worker02-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem [worker01-IP].kubeconfig kube-proxy.kubeconfig ubuntu@[worker01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem [worker02-IP].kubeconfig kube-proxy.kubeconfig ubuntu@[worker02-IP]:~
 ```

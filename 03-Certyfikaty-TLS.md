@@ -261,6 +261,7 @@ cfssl gencert \
 
 Generowanie certyfikatu dla Kubernetes API Server znajdującego się na węzłach typu master:
 ```
+{
 cat > kubernetes-csr.json <<EOF
 {
   "CN": "kubernetes",
@@ -328,7 +329,7 @@ cfssl gencert \
 
 Następnie skopjuj certyfikaty do odpowiednich nodów:
 ```
-scp -i ../Kubernetes_Fundamentals.pem ca.pem worker01-key.pem worker01.pem ubuntu@[worker01-IP]:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem [worker02-IP]:~
-scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem [master01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem worker01-key.pem worker01.pem ubuntu@${WORKER01_IP}:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem ubuntu@{WORKER02_IP}:~
+scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem ubuntu@{MASTER01_IP}:~
 ```

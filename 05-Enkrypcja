@@ -1,11 +1,15 @@
+Kubernetes przechowuje różne dane - stan klastra, konfigurację aplikacji i sekrety. Zaszyfrujmy to!
+
+## Encryption Key
 Tworzymy klucz szyfrowania dla secretów:
 ```
 sudo ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
 ```
+## Encryption Config File
+
 Manifest dla konfiguracji szyfrowania K8S:
 ```
-sudo cat > encryption-config.yaml << EOF
-
+cat > encryption-config.yaml <<EOF
 kind: EncryptionConfig
 apiVersion: v1
 resources:
@@ -21,5 +25,5 @@ EOF
 ```
 Kopjujemy manifest do serwera master01:
 ```
-scp encryption-config.yaml [master01-IP]:~
+scp -i ../Kubernetes_Fundamentals.pem encryption-config.yaml ubuntu@${MASTER01_IP}:~
 ```

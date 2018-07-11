@@ -28,7 +28,7 @@ Czas zainstalować HAProxy:
 sudo apt-get install haproxy
 sudo vi /etc/haproxy/haproxy.cfg
 ```
-W konfigurację HAProxy wpisujemy następujące parametry:
+W konfigurację HAProxy dopisujemy na końcu następujęce linie następujące parametry:
 ```
 global
 
@@ -51,4 +51,3 @@ Każda kolejna linia server oznaczałaby kolejny serwer master K8S, w naszym prz
 ```
 sudo systemctl restart haproxy
 ```
-

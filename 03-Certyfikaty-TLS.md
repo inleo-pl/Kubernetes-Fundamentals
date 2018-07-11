@@ -1,3 +1,8 @@
+Stwórz katalog zawierający certyfikaty na potrzeby klastra Kubernetes:
+```
+mkdir cert/
+cd cert
+```
 Plik konfiguracyjny CA:
 ```
 sudo vi ca-config.json

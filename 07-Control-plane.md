@@ -25,6 +25,7 @@ sudo mkdir -p /var/lib/kubernetes
 ```
 Skopjuj certy i konfigurację API:
 ```
+cd /home/ubuntu/
 sudo mv ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \
     service-account-key.pem service-account.pem \
     encryption-config.yaml /var/lib/kubernetes/
@@ -123,6 +124,7 @@ sudo mv kube-scheduler.kubeconfig /var/lib/kubernetes/
 ```
 Stwórz plik kube-scheduler.yaml:
 ```
+mkdir -p /etc/kubernetes/config/
 cat <<EOF | sudo tee /etc/kubernetes/config/kube-scheduler.yaml
 apiVersion: componentconfig/v1alpha1
 kind: KubeSchedulerConfiguration
@@ -180,11 +182,6 @@ Restartujemy demona:
 sudo systemctl restart nginx
 sudo systemctl enable nginx
 ```
-Weryfikacja czy robi:
-```
-curl -H "Host: kubernetes.default.svc.cluster.local" -i http://127.0.0.1/healthz
-```
-
 ## Przeładuj serwisy
 
 ```
@@ -194,6 +191,11 @@ curl -H "Host: kubernetes.default.svc.cluster.local" -i http://127.0.0.1/healthz
   sudo systemctl start kube-apiserver kube-controller-manager kube-scheduler
 }
 ```
+Nie szalej. Daj 10 sek. Weryfikacja czy robi:
+```
+curl -H "Host: kubernetes.default.svc.cluster.local" -i http://127.0.0.1/healthz
+```
+
 ## Sprawdź
 
 Sprawdzamy czy klaster produkuje

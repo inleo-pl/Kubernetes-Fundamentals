@@ -1,7 +1,7 @@
 Stwórz katalog zawierający certyfikaty na potrzeby klastra Kubernetes:
 ```
-mkdir cert/
-cd cert
+mkdir conf/
+cd conf
 ```
 Plik konfiguracyjny CA:
 ```

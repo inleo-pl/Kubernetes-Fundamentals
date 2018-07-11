@@ -5,7 +5,7 @@ Kubernetes przechowuje różne dane - stan klastra, konfigurację aplikacji i se
 ## Encryption Key
 Tworzymy klucz szyfrowania dla secretów:
 ```
-sudo ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
+ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
 ```
 ## Encryption Config File
 

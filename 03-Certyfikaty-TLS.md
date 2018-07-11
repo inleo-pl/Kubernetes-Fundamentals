@@ -124,7 +124,7 @@ cfssl gencert \
   -config=ca-config.json \
   -hostname=worker01,${WORKER01_IP},${WORKER01_IP} \
   -profile=kubernetes \
-  worker01-csr.json | cfssljson -bare worker01-csr.json
+  worker01-csr.json | cfssljson -bare worker01
 ```
 Następnie worker02:
 ```
@@ -153,7 +153,7 @@ cfssl gencert \
   -config=ca-config.json \
   -hostname=worker01,${WORKER02_IP},${WORKER02_IP} \
   -profile=kubernetes \
-  worker02-csr.json | cfssljson -bare worker02-csr.json
+  worker02-csr.json | cfssljson -bare worker02
 ```
 ### Certyfikat Controller Managera
 

@@ -10,7 +10,7 @@ kubectl config set-cluster kubernetes \
 --certificate-authority=ca.pem \
 --embed-certs=true \
 --server=https://[HAProxy-IP]:6443 \
---kubeconfig=[worker01-IP].kubeconfig
+--kubeconfig='[worker01-IP].kubeconfig'
 ```
 Następnie dodoajemy uprawnienia:
 ```
@@ -18,14 +18,14 @@ kubectl config set-credentials system:node:[worker01-IP] \
 --client-certificate=[worker01-IP].pem \
 --client-key=[worker01-IP]-key.pem \
 --embed-certs=true \
---kubeconfig=[worker01-IP].kubeconfig
+--kubeconfig='[worker01-IP].kubeconfig'
 ```
 I dorzucemy kontekst:
 ```
 kubectl config set-context default \
 --cluster=kubernetes \
 --user=system:node:[worker01-IP] \
---kubeconfig=[worker01-IP].kubeconfig
+--kubeconfig='[worker01-IP].kubeconfig'
 
 kubectl config use-context default --kubeconfig=[worker01-IP].kubeconfig
 ```
@@ -35,7 +35,7 @@ kubectl config set-cluster kubernetes \
 --certificate-authority=ca.pem \
 --embed-certs=true \
 --server=https://[HAProxy-IP]:6443 \
---kubeconfig=[worker02-IP].kubeconfig
+--kubeconfig='[worker02-IP].kubeconfig'
 ```
 Następnie dodoajemy uprawnienia:
 ```
@@ -43,14 +43,14 @@ kubectl config set-credentials system:node:[worker02-IP] \
 --client-certificate=[worker02-IP].pem \
 --client-key=[worker02-IP]-key.pem \
 --embed-certs=true \
---kubeconfig=[worker02-IP].kubeconfig
+--kubeconfig='[worker02-IP].kubeconfig'
 ```
 I dorzucemy kontekst:
 ```
 kubectl config set-context default \
 --cluster=kubernetes \
 --user=system:node:[worker02-IP] \
---kubeconfig=[worker02-IP].kubeconfig
+--kubeconfig='[worker02-IP].kubeconfig'
 
 kubectl config use-context default --kubeconfig=[worker02-IP].kubeconfig
 ```

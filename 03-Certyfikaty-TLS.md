@@ -10,7 +10,7 @@ Zdefiniuj zmienne:
 WORKER01_IP='[worker01-IP]'
 WORKER02_IP='[worker02-IP]'
 MASTER01_IP='[master01-IP]'
-EXTERNAL_IP='[HAProxy-IP]
+EXTERNAL_IP='[HAProxy-IP]'
 ```
 ## Certificate Authority
 

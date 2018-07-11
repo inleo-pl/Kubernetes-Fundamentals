@@ -1,9 +1,3 @@
-Stwórz katalog:
-```
-cd ..
-mkdir config
-cd config/
-```
 Musimy skonfigurować kubelet i kube-proxy na każdym węźle klastra typu worker, na początku generujemy kubeconfig dla kubelets. Zaczynamy od informacji dot klastra:
 ```
 kubectl config set-cluster kubernetes \

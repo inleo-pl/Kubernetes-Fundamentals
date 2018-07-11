@@ -1,3 +1,5 @@
+# HAproxy
+
 Należy zaktualizować serwer HAProxy:
 ```
 sudo apt-get update

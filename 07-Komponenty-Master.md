@@ -144,3 +144,53 @@ Sprawdz czy działa:
 ```
 kubectl get componentstatuses
 ```
+Skonfigurujmy API dla master01, tak aby mogło uzyskać dostęp do kubeleta, na początku manifest:
+```
+sudo vi kube-apiserver-to-kubelet.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  name: system:kube-apiserver-to-kubelet
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - nodes/proxy
+      - nodes/stats
+      - nodes/log
+      - nodes/spec
+      - nodes/metrics
+    verbs:
+      - "*"
+
+sudo kubectl create -f kube-apiserver-to-kubelet.yaml
+```
+Następnie manifest który pozoli przypiąć nam rolę klastra do użytkownika poprzez API:
+```
+sudo vi kube-apiserver-to-kubelet-bind.yaml
+
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: system:kube-apiserver
+  namespace: ""
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:kube-apiserver-to-kubelet
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: kubernetes
+    
+sudo kubectl create -f kube-apiserver-to-kubelet-bind.yaml
+```
+Sprawdzamy:
+```
+curl --cacert ca.pem https://[HAProxy-IP:6443/version
+```

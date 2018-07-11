@@ -103,7 +103,7 @@ Kolejnym certem jest certyfikat klienta kubelet dla każdego workera, na począt
 ```
 cat > worker01-csr.json <<EOF
 {
-  "CN": "system:node:${instance}",
+  "CN": "system:node:worker01",
   "key": {
     "algo": "rsa",
     "size": 2048
@@ -132,7 +132,7 @@ Następnie worker02:
 ```
 cat > worker02-csr.json <<EOF
 {
-  "CN": "system:node:${instance}",
+  "CN": "system:node:worker02",
   "key": {
     "algo": "rsa",
     "size": 2048

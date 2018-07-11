@@ -1,4 +1,4 @@
-# Konfiguracja kliena
+# Konfiguracja klienta
 Połącz się z HAProxy i skonfigueruj jako maszynę kliencką, aby miała dostęp do klastra:
 ```
 EXTERNAL_IP=$(hostname -i)

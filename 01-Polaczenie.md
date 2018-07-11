@@ -10,3 +10,4 @@ ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@manager01
 ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@worker01
 ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@worker02
 ```
+Sprawdz IP każdego z powyższych serwerów i zapisz je sobie.

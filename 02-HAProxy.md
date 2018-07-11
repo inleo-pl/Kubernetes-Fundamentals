@@ -12,7 +12,7 @@ chmod +x cfssl*
 sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
 sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
 ```
-Weryfikuejemy instlację:
+Weryfikujemy instlację:
 ```
 cfssl version
 ```

@@ -35,7 +35,7 @@ global
 default
 ...
 frontend kubernetes
-    bind        10.10.40.63:6443
+    bind        [HAProxy-IP]:6443
     option      tcplog
     mode        tcp
     default_backend kubernetes-master-nodes
@@ -45,7 +45,7 @@ backend kubernetes-master-nodes
     mode    tcp
     balance roundrobin
     option  tcp-check
-    server  k8s-master-0 10.10.40.60:6443 check fall 3 rise 2
+    server  master01 [master01-IP]:6443 check fall 3 rise 2
 ```
 Każda kolejna linia server oznaczałaby kolejny serwer master K8S, w naszym przypadku mamy tylko jeden. Starujemy HAProxy
 ```

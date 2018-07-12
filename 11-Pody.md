@@ -28,3 +28,8 @@ Exec:
 kubectl exec -ti $POD_NAME -- nginx -v
 kubectl exec -ti $POD_NAME -- bash
 ```
+Zmień ustawienia poda poprzez zmianę w serwisie przy użyciu deploymentu:
+```
+kubectl expose deployment nginx --port 80 --type NodePort
+```
+Zaktualizuj konfigurację HAProxy aby zobaczyć to ze świata! ... ale to zaraz, na początku wystawmy coś ciekawego.

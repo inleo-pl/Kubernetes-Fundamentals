@@ -1,13 +1,9 @@
 # Serwisy
-Uruchamiamy serwis:
-```
-kubectl expose deployment nginx --port 80 --type NodePort
-```
-Wyświetlamy seriwsy
+Wyświetlamy serwisy:
 ```
 kubectl get services
 ```
-Zaktualizuj konfigurację HAProxy aby zobaczyć to ze świata! ... ale to zaraz, na początku wystawmy coś ciekawego.
+Powołaj serwis:
 ```
 kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 ```

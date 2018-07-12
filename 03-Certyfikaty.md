@@ -153,7 +153,7 @@ cfssl gencert \
   -ca=ca.pem \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
-  -hostname=worker01,${WORKER02_IP},${WORKER02_IP} \
+  -hostname=worker02,${WORKER02_IP},${WORKER02_IP} \
   -profile=kubernetes \
   worker02-csr.json | cfssljson -bare worker02
 ```

@@ -27,14 +27,14 @@ kubectl version
 ```
 Czas zainstalować HAProxy:
 ```
-sudo apt-get install haproxy
+sudo apt-get -y install haproxy
 sudo vi /etc/haproxy/haproxy.cfg
 ```
 W konfigurację HAProxy dopisujemy na końcu następujęce linie następujące parametry:
 ```
 global
 
-default
+defaults
 
 frontend kubernetes
     bind        [HAProxy-IP]:6443

@@ -29,3 +29,7 @@ Sprawdz:
 ```
 kubectl get nodes
 ```
+Dodajemy uprawnienia dla naszego certu wystawionego na użytkownika kubernetes:
+```
+kubectl create clusterrolebinding apiserver-kubelet-api-admin --clusterrole system:kubelet-api-admin --user kubernetes
+```

@@ -1,4 +1,4 @@
-# Pody i Deployment
+# Pody
 Uruchomienie poda:
 ```
 kubectl run nginx --image=nginx

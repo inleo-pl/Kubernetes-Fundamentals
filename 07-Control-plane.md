@@ -33,7 +33,6 @@ sudo mv ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \
 Dodaj zmienną:
 ```
 INTERNAL_IP=$(hostname -i)
-MASTER01_IP='[master01-IP]
 ```
 Stwórz konfig API systemd:
 ```
@@ -59,7 +58,7 @@ ExecStart=/usr/local/bin/kube-apiserver \\
   --etcd-cafile=/var/lib/kubernetes/ca.pem \\
   --etcd-certfile=/var/lib/kubernetes/kubernetes.pem \\
   --etcd-keyfile=/var/lib/kubernetes/kubernetes-key.pem \\
-  --etcd-servers=https://${MASTER01_IP}:2379 \\
+  --etcd-servers=https://${INTERNAL_IP}:2379 \\
   --event-ttl=1h \\
   --experimental-encryption-provider-config=/var/lib/kubernetes/encryption-config.yaml \\
   --kubelet-certificate-authority=/var/lib/kubernetes/ca.pem \\

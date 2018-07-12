@@ -1,6 +1,6 @@
 # Kubernetes Control Plane
 
-Zainstalujemy następujące elmenty na naszym nodzie master: Kubernetes API Server, Scheduler i Controller Manager. Jeżeli chcecie dodać więcej węzłów master, komendy te musicie powilić na wszytskich z nich, wówczas osiągniecie nadmiarowość i HA.
+Zainstalujemy następujące elmenty na naszym nodzie master: Kubernetes API Server, Scheduler i Controller Manager. Jeżeli chcecie dodać więcej węzłów master, komendy te musicie powielić na wszytskich z nich, wówczas osiągniecie nadmiarowość i HA.
 
 ## Instalacja Control Plane
 
@@ -23,7 +23,7 @@ Stwórz katalog z konfiguracją:
 ```
 sudo mkdir -p /var/lib/kubernetes
 ```
-Skopjuj certy i konfigurację API:
+Skopiuj certy i konfigurację API:
 ```
 cd /home/ubuntu/
 sudo mv ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \
@@ -82,7 +82,7 @@ EOF
 ```
 ### Kubernetes Controller Manager
 
-Przekopjuj konfigurację:
+Przekopiuj konfigurację:
 ```
 cd /home/ubuntu/
 sudo mv kube-controller-manager.kubeconfig /var/lib/kubernetes/

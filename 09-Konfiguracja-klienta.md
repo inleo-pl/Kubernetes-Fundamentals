@@ -1,5 +1,9 @@
 # Konfiguracja klienta
-Połącz się z HAProxy i skonfigueruj jako maszynę kliencką, aby miała dostęp do klastra:
+Wykożystamy HA Proxy jako serwer do zarządzania naszym klastrem. Dla przypomnienia infra wygląda teraz tak:
+
+![K8S-Architecture-Diagram-Worker-Nodes](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Worker-Nodes.png)
+
+Połącz się zatem z HAProxy i skonfiguruj jako maszynę kliencką, aby miała dostęp do klastra:
 ```
 EXTERNAL_IP=$(hostname -i)
 cd conf/
@@ -33,3 +37,9 @@ Dodajemy uprawnienia dla naszego certu wystawionego na użytkownika kubernetes:
 ```
 kubectl create clusterrolebinding apiserver-kubelet-api-admin --clusterrole system:kubelet-api-admin --user kubernetes
 ```
+## Podsumowanie
+Masz swój pierwszy działający klaster, który postawiłeś od początku do końca sam. Gratulacje! Tymczasem Twoja infra jest już całkiem imponująca:
+
+![K8S-Architecture-Diagram-Client](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Client.png)
+
+Czas puścić na nim jakieś aplikacje!

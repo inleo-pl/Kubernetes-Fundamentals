@@ -60,6 +60,6 @@ sudo systemctl restart haproxy
 ## Podsumowanie
 Ufff... Na koniec tego ćwiczenia już coś jest, a można to zobrazować tak:
 
-![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy.png)
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy-2.png)
 
 Następny moduł [Certyfikaty](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/03-Certyfikaty.md).

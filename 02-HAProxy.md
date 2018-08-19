@@ -57,6 +57,7 @@ Każda kolejna linia server oznaczałaby kolejny serwer master K8S, w naszym prz
 ```
 sudo systemctl restart haproxy
 ```
+## Podsumowanie
 Ufff... Na koniec tego ćwiczenia już coś jest, a można to zobrazować tak:
 
 ![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy.png)

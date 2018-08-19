@@ -42,4 +42,4 @@ Masz swój pierwszy działający klaster, który postawiłeś od początku do ko
 
 ![K8S-Architecture-Diagram-Client](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Client.png)
 
-Czas puścić na nim jakieś aplikacje!
+Czas puścić na nim jakieś aplikacje... momencik, zacznijmy jednak od [KubeDNS](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/10-Kube-DNS.md).

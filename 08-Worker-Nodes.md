@@ -229,6 +229,6 @@ Wejdz na master01 i wpisz:
 kubectl get nodes --kubeconfig admin.kubeconfig
 ```
 ## Podsumowanie
-Uff.. kawał roboty. Teraz jest już naprwade dobrze:
+Uff.. kawał roboty, ale teraz jest już naprwade dobrze:
 
 ![K8S-Architecture-Diagram-Worker-Nodes](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Worker-Nodes.png)

@@ -1,8 +1,8 @@
 # HAproxy
 
-Zaczynamy od HA Proxy. Cel jest następujący:
+Zaczynamy od HA Proxy. Nasze środowisko jest puste i wygłada następująco:
 
-![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HA-Proxy.png)
+![K8S-Architecture-Diagram-Empty](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Empty.png)
 
 Należy zaktualizować serwer HAProxy:
 ```

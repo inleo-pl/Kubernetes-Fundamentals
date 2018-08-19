@@ -1,5 +1,7 @@
 # Połączenie
 
+Znajdź namiary na swój lab [tutaj](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/Adresy-LAB.md).
+
 Pobierz klucz na swój komputer:
 ```
 wget https://raw.githubusercontent.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/master/Kubernetes_Fundamentals.pem

@@ -210,6 +210,6 @@ kubectl get componentstatuses --kubeconfig admin.kubeconfig
 
 Gdzie jesteśmy, dokąd zmierzamy? :D Jest już całekiem nieźle nie?
 
-![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane-2.png)
+![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane-3.png)
 
 Koljenym krokiem jest skonfigurowanie [Workerów](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/08-Worker-Nodes.md).

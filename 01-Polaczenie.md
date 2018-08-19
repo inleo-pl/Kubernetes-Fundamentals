@@ -14,7 +14,7 @@ ssh -i /miejsce/gdzie/jest/Kubernetes_Fundamentals.pem ubuntu@worker02
 ```
 Nasz lab docelowo będzie wyglądał tak:
 
-![K8S Architecture Diagram](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram.png)
+![K8S-Architecture-Diagram-Overview](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Overview.png)
 
 Tymczasem, zamin do tego dojdzie sprawdź IP każdego z powyższych serwerów i zapisz je sobie. Dodatkowo sciągnij sobie na HAProxy certyfikat .pem:
 ```

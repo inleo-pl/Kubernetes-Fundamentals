@@ -21,4 +21,5 @@ Tymczasem, zamin do tego dojdzie sprawdź IP każdego z powyższych serwerów i 
 wget https://raw.githubusercontent.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/master/Kubernetes_Fundamentals.pem
 chmod 600 Kubernetes_Fundamentals.pem
 ```
-Następny moduł [HAProxy](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/02-HAProxy.md).
+## Podsumowanie
+Wiemy gdzie biegniemy, jesteśmy połączeni! Zatem czas na następny moduł [HAProxy](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/02-HAProxy.md).

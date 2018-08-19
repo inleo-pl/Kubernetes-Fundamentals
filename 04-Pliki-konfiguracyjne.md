@@ -157,4 +157,4 @@ scp -i ../Kubernetes_Fundamentals.pem worker02.kubeconfig kube-proxy.kubeconfig 
 scp -i ../Kubernetes_Fundamentals.pem admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig ubuntu@${MASTER01_IP}:~
 ```
 ## Podsumowanie
-Konfigi gotowe, czas zaszyfrować ten bałagan - [etcd](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/05-Szyfrowanie.md).
+Konfigi gotowe, czas zaszyfrować ten bałagan... Czyli następny moduł - [szyfrowanie](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/05-Szyfrowanie.md)!

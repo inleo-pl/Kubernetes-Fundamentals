@@ -33,3 +33,5 @@ Zmień ustawienia poda poprzez zmianę w serwisie przy użyciu deploymentu:
 kubectl expose deployment nginx --port 80 --type NodePort
 ```
 Zaktualizuj konfigurację HAProxy aby zobaczyć to ze świata! ... ale to zaraz, na początku wystawmy coś ciekawego.
+## Podsumowanie
+Ok, pody rozumiem ale [serwisy](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/12-Serwisy.md)?

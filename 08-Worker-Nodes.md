@@ -1,6 +1,10 @@
 # Węzły worker
 Moduł ten to instalacja bajerów na workerach, w module zainstalujemy: runc, gVisor, container networking plugins, containerd, kubelet i kube-proxy. Poniższe instrukcje należy wykonać na wszytkich węzłach typu worker w klastrze - w naszym przypadku worker01 i worker02, a jak byście chcieli więcej nodów... to na kazdym następnym też.
 
+Staneliśmy na tym:
+
+![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane.png)
+
 ## Zależności i ustawienia systemu
 
 Doinstaluj brakujace elementy na workerze:
@@ -224,3 +228,7 @@ Wejdz na master01 i wpisz:
 ```
 kubectl get nodes --kubeconfig admin.kubeconfig
 ```
+## Podsumowanie
+Uff.. kawał roboty. Teraz jest już naprwade dobrze:
+
+![K8S-Architecture-Diagram-Worker-Nodes](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Worker-Nodes.png)

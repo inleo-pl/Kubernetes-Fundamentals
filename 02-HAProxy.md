@@ -1,6 +1,6 @@
 # HAproxy
 
-Zaczynamy od HA Proxy, w diagramie naszego Laba znajduje się ono tutaj:
+Zaczynamy od HA Proxy. Cel jest następujący:
 
 ![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HA-Proxy.png)
 

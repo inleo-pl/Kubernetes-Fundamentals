@@ -3,7 +3,7 @@ Moduł ten to instalacja bajerów na workerach, w module zainstalujemy: runc, gV
 
 Staneliśmy na tym:
 
-![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane.png)
+![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane-3.png)
 
 ## Zależności i ustawienia systemu
 
@@ -229,6 +229,8 @@ Wejdz na master01 i wpisz:
 kubectl get nodes --kubeconfig admin.kubeconfig
 ```
 ## Podsumowanie
-Uff.. kawał roboty, ale teraz jest już naprwade dobrze:
+Uff.. kawał roboty, ale teraz jest już naprawdę dobrze:
 
-![K8S-Architecture-Diagram-Worker-Nodes](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Worker-Nodes.png)
+![K8S-Architecture-Diagram-Worker-Nodes](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Worker-Nodes-2.png)
+
+Teraz czas na skonfigurowanie [klienta](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/09-Konfiguracja-klienta.md).

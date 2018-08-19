@@ -335,3 +335,5 @@ scp -i ../Kubernetes_Fundamentals.pem ca.pem worker01-key.pem worker01.pem ubunt
 scp -i ../Kubernetes_Fundamentals.pem ca.pem worker02-key.pem worker02.pem ubuntu@${WORKER02_IP}:~
 scp -i ../Kubernetes_Fundamentals.pem ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem ubuntu@${MASTER01_IP}:~
 ```
+## Podsumowanie
+Mamy wszystkie certy, czas na następny moduł [Pliki konfiguracyjne](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/04-Pliki-konfiguracyjne.md).

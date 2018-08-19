@@ -2,6 +2,10 @@
 
 Wszytskie elementy Kubernetesa są stateless. Jedyne miejsce gdzie trzymane są dane to etcd. Należy go uruchomić na każdym węźle typu master. W labie mamy jeden, jednak jak byście chcieli dołaczyć więcej w celu uzyskania niezawodności należy odpalić poniższe polecenia na każdym kolejnym węźle.
 
+Przygotowaliśmy już sporo elementów, ale nasze środowisko wciąż wygląda ubogo... ale niemartw się za chwilę dorzucimy do niego trochę elementów, tymczasem jesteśmy tu:
+
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy.png)
+
 Logujemy się na węzeł master01 i sciągamy niezbędne pliki:
 ```
 wget -q --show-progress --https-only --timestamping "https://github.com/coreos/etcd/releases/download/v3.3.5/etcd-v3.3.5-linux-amd64.tar.gz"
@@ -77,3 +81,6 @@ sudo ETCDCTL_API=3 etcdctl member list \
   --cert=/etc/etcd/kubernetes.pem \
   --key=/etc/etcd/kubernetes-key.pem
 ```
+Yey! Mamy etcd na pokładzie, nasze środowisko wygląda teraz tak:
+
+![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd.png)

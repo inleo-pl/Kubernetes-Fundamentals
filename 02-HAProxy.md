@@ -1,5 +1,9 @@
 # HAproxy
 
+Zaczynamy od HA Proxy, w diagramie naszego Laba znajduje się ono tutaj:
+
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HA-Proxy.png)
+
 Należy zaktualizować serwer HAProxy:
 ```
 sudo apt-get update

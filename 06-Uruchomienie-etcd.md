@@ -4,7 +4,7 @@ Wszytskie elementy Kubernetesa są stateless. Jedyne miejsce gdzie trzymane są 
 
 Przygotowaliśmy już sporo elementów, ale nasze środowisko wciąż wygląda ubogo... ale niemartw się za chwilę dorzucimy do niego trochę elementów, tymczasem jesteśmy tu:
 
-![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy.png)
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAProxy.png)
 
 Logujemy się na węzeł master01 i sciągamy niezbędne pliki:
 ```

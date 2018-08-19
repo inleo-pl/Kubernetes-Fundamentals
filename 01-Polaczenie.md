@@ -16,7 +16,7 @@ Nasz lab docelowo będzie wyglądał tak:
 
 ![K8S Architecture Diagram](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram.png)
 
-Sprawdz IP każdego z powyższych serwerów i zapisz je sobie. Dodatkowo sciągnij sobie na HAProxy certyfikat .pem:
+Tymczasem, sprawdz IP każdego z powyższych serwerów i zapisz je sobie. Dodatkowo sciągnij sobie na HAProxy certyfikat .pem:
 ```
 wget https://raw.githubusercontent.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/master/Kubernetes_Fundamentals.pem
 chmod 600 Kubernetes_Fundamentals.pem

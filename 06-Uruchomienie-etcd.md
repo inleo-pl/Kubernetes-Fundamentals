@@ -4,7 +4,7 @@ Wszytskie elementy Kubernetesa są stateless. Jedyne miejsce gdzie trzymane są 
 
 Przygotowaliśmy już sporo elementów, ale nasze środowisko wciąż wygląda ubogo... ale niemartw się za chwilę dorzucimy do niego trochę elementów, tymczasem jesteśmy tu:
 
-![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy.png)
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAproxy-2.png)
 
 Logujemy się na węzeł master01 i sciągamy niezbędne pliki:
 ```
@@ -84,6 +84,6 @@ sudo ETCDCTL_API=3 etcdctl member list \
 ## Podsumowanie
 Yey! Mamy etcd na pokładzie, nasze środowisko wygląda teraz tak:
 
-![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd-2.png)
+![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd-3.png)
 
 Czas na grubą konfigurację, zaczynamy od [Control Plane](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/07-Control-plane.md).

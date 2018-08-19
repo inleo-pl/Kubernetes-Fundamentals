@@ -4,7 +4,7 @@ Zainstalujemy następujące elmenty na naszym nodzie master: Kubernetes API Serv
 
 Dla przypomnienia nasze środowisko na tym etapie wygląda następująco:
 
-![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd.png)
+![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd-2.png)
 
 ## Instalacja Control Plane
 
@@ -210,4 +210,6 @@ kubectl get componentstatuses --kubeconfig admin.kubeconfig
 
 Gdzie jesteśmy, dokąd zmierzamy? :D Jest już całekiem nieźle nie?
 
-![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane.png)
+![K8S-Architecture-Diagram-Control-Plane](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-Control-Plane-2.png)
+
+Koljenym krokiem jest skonfigurowanie [Workerów](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/08-Worker-Nodes.md).

@@ -59,4 +59,4 @@ sudo systemctl restart haproxy
 ```
 Ufff... Na koniec tego ćwiczenia już coś jest, a można to zobrazować tak:
 
-![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HA-proxy.png)
+![K8S-Architecture-Diagram-HA-Proxy](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-HAProxy.png)

@@ -20,3 +20,5 @@ Wprowadz uzyskaną nazwę ponizej:
 ```
 kubectl exec -ti [nazwa] -- nslookup kubernetes
 ```
+## Podsumowanie
+Odpaliliśmy coś, ale o co chodzi? Serwisy, deploymenty, pody... nie rozumiem! Zacznijmy zatem od [Podów](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/11-Pody.md).

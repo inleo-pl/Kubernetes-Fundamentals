@@ -75,3 +75,5 @@ Wymieniamy type: ClusterIP na type: NodePort. Następnie
 kubectl -n kube-system get service kubernetes-dashboard
 ```
 Zaktualziuj HAProxy i wejdz na stronkę... nie zapomnij o tym że masz iśc przez https://zewnetrzny.adrestwojego.ha.proxy:8080
+## Podsumowanie
+Czas na coś co tygryski lubią najbardziej, czyli [deploymenty](https://github.com/inleo-pl/Warsztat-Kubernetes-Fundamentals/blob/master/13-Deployment.md).

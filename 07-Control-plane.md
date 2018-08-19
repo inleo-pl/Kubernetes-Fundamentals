@@ -4,7 +4,7 @@ Zainstalujemy następujące elmenty na naszym nodzie master: Kubernetes API Serv
 
 Dla przypomnienia nasze środowisko na tym etapie wygląda następująco:
 
-![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd-2.png)
+![K8S-Architecture-Diagram-etcd](https://inleo.pl/wp-content/uploads/2018/08/K8S-Architecture-Diagram-etcd-3.png)
 
 ## Instalacja Control Plane
 

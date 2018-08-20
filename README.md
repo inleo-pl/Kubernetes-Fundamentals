@@ -42,6 +42,7 @@ Więcej informacji znjadziesz tutaj: https://inleo.pl/produkt/kubernetes-fundame
 
 ## Źródła i przydatne linki
 
+ * https://inleo.pl/blog/kubernetes-ingress-autoingress/
  * https://github.com/kubernetes/minikube
  * https://github.com/kubernetes/kops
  * https://keel.sh

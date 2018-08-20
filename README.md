@@ -43,6 +43,7 @@ Więcej informacji znjadziesz tutaj: https://inleo.pl/produkt/kubernetes-fundame
 ## Źródła i przydatne linki
 
  * https://github.com/kubernetes/minikube
+ * https://github.com/kubernetes/kops
  * https://keel.sh
  * https://helm.sh
  * https://github.com/google/gvisor

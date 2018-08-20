@@ -127,7 +127,7 @@ sudo mv kube-scheduler.kubeconfig /var/lib/kubernetes/
 ```
 Stwórz plik kube-scheduler.yaml:
 ```
-mkdir -p /etc/kubernetes/config/
+sudo mkdir -p /etc/kubernetes/config/
 cat <<EOF | sudo tee /etc/kubernetes/config/kube-scheduler.yaml
 apiVersion: componentconfig/v1alpha1
 kind: KubeSchedulerConfiguration

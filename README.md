@@ -56,3 +56,4 @@ Więcej informacji znjadziesz tutaj: https://inleo.pl/produkt/kubernetes-fundame
  * https://github.com/kubernetes-incubator/cri-tools
  * https://github.com/kelseyhightower/kubernetes-the-hard-way/blob/master/README.md 
  * https://blog.inkubate.io/deploy-kubernetes-1-9-from-scratch-on-vmware-vsphere/
+ * https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/
